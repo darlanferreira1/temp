@@ -36,3 +36,48 @@ bool listaVazia(){
     } 
 }
 
+//array circular 
+void incrementa (int &i){
+    if( i == tamanho - 1){
+        i = 0;
+    }else{
+        i++;
+    }
+}
+
+void decrementa(int &i){
+    if( i == 0){
+        i = tamanho -1;
+    }else{
+        i--;
+    }
+}
+
+void adicionaFIM (string nome, int qtd, Produto produtos[]){
+    if (listaCheia()){
+        return;
+    }else{
+        Produto *p = new Produto();
+        p->nome = nome;
+        p->qtd = qtd; 
+
+        if(!listaVazia()){
+            //l->ultimo = l->ultimo + 1;
+            incrementa(l->ultimo);
+        }
+
+        produtos[l->ultimo] = *p;
+        l->qtd++;
+    }
+}
+
+void removeFIM (Produto produtos[]){
+    if (listaVazia()){
+        return;
+    }else{
+        produtos[l->ultimo].nome = "";
+        produtos[l->ultimo].qtd = 0;
+        decrementa(l->ultimo); 
+        l->qtd--;
+    }
+}

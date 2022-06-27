@@ -3,7 +3,7 @@
 typedef int TipoItem;
 
 
-struct No{ //node
+struct No { //node
     TipoItem valor;
     No* proximo;
 };

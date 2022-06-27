@@ -18,7 +18,7 @@ using namespace std;
     }   //destrutor
     
     bool pilhadinamica::estavazio(){
-        return(NoTopo = NULL);
+        return (NoTopo = NULL);
     } //isempty
     
     bool pilhadinamica::estacheio() //tem memória //isfull
